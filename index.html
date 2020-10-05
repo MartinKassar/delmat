@@ -8,14 +8,16 @@
     <script src="main.js"></script>
     <title>Document</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
 <body>
     <header>
-        <span class="material-icons">
+        <span class="material-icons" style="font-size: 32px;">
             account_circle
         </span>
-        <h1>Delmat</h1>
+        <!-- <h1 class="logo">Delmat</h1> -->
+        <img class="logo" src="pics/logo.png">
     </header>
     <div id="showcase">
         <h1 class="welcome-text">En plats för att dela mat och & ingredienser för alla
@@ -32,6 +34,13 @@
             <h3>Alla</h3>
             <h3>Mat</h3>
             <h3>Produkt</h3>
+            <select style="font-size: 25px; height: 31px; margin-top: 16px;" name="cars" id="cars">
+                <option selected disabled>Filtrera på kost</option>
+                <option value="volvo">Vegan</option>
+                <option value="saab">Vegetarisk</option>
+                <option value="saab">Icke-veg</option>
+            </select>
+            
         </div>
     </div>
     <div id="add">
@@ -40,60 +49,131 @@
         <h3>Produkt</h3>
     </div>
     <div id="addfood">
-        <h4>Maten</h4> <input class="form" type="text">
+        <fieldset>
+            <legend style="font-size: 2em;">Dela mat:</legend>
+        <h4>Maten</h4> <input placeholder="Namn på rätten..." class="form" type="text">
         <br>
-        <h4>Ingredienser</h4> <input class="form" type="text">
+        <h4>Ingredienser</h4> 
+        <span class="list" style="margin-left: 77px;">
+        <input placeholder="Lägg till ingredienser..." class="form" type="text"> <button style="font-size: 21px; margin-left: 5px;">Lägg till</button>
+        </span>
+        <ul class="listitems">
+            <li><span class="material-icons">
+                remove
+                </span>  Lök</li>
+            <li><span class="material-icons">
+                remove
+                </span>  Morötter</li>
+            <li><span class="material-icons">
+                remove
+                </span>  Palsternacka</li>
+            <li><span class="material-icons">
+                remove
+                </span>  Olivolja</li>
+            <li><span class="material-icons">
+                remove
+                </span>  Spaghetti</li>
+            <li><span class="material-icons">
+                remove
+                </span>  Parmesanost</li>
+            <li><span class="material-icons">
+                remove
+                </span>  Olivolja</li>
+        </ul>
         <br>
         <label for="cars"><h4>Leverans:</h4></label>
 
         <select name="cars" id="cars">
-            <option value="volvo">Körs ut</option>
-            <option value="saab">Hämtas</option>
+            <option value="volvo">Hämtas</option>
+            <option value="saab">Körs ut</option>
             <option value="saab">Båda</option>
         </select>
         <br>
-        <h4>Adress</h4> <input class="form" type="text">
+        <h4>Adress</h4> <input placeholder="Skriv in din adress..." class="form" type="text">
         <br>
-        <h4>Övrigt</h4> <input class="form" type="text">
+        <h4>Övrigt</h4> <textarea class="form" type="text" rows="4" cols="50">
+            
+            </textarea>
         <br>
-        <h4>Maten</h4> <input class="form" type="text">
+        <h4>Tillagning</h4> <input placeholder="Hur ska maten värmas" class="form" type="text">
         <br>
-        <h4>Ladda upp bild</h4> <input class="form" type="file">
-        <img src="https://img.icons8.com/ios/50/000000/upload.png"/>
-        <a href="https://icons8.com/icon/368/upload">Upload icon by Icons8</a>
+        <!--  <input class="form" type="file"> -->
+        <h4>Ladda upp bild</h4>
+        <button style="margin: 10px; background: white;"><img src="https://img.icons8.com/ios/50/000000/upload.png"/></button>
+        <!-- <a href="https://icons8.com/icon/368/upload">Upload icon by Icons8</a> -->
         <br>
         <button class="publish">Publicera</button>
-
+    </fieldset>
     </div>
     </div>
     <div id="cards">
         <div class="inner-card">
-            <img src="pics/oskar-face.jpg">
-            <h3>Tacosås</h3>
-            <h4>Ta mig till detaljer --></h4>
+            <div class="imgHolder">
+            <img src="pics/pexels-daria-shevtsova-704569.jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Avokadoröra</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </button>
+                </div>
         </div>
         <div class="inner-card">
-            <img src="pics/oskar-face.jpg">
-            <h3>Tacosås</h3>
-            <h4>Ta mig till detaljer --></h4>
+            <div class="imgHolder">
+            <img src="pics/pexels-ella-olsson-1640777.jpg">
+            <span>Hämtas/körs direkt</span>
+            </div>
+            <h3>Pastasallad</h3>
+            <div class="arrow">
+                <span>
+                <i class="fas fa-car-side"></i>
+                <i class="fas fa-home"></i>
+                </span>
+                <button class="detBtn">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </button>
+                </div>
         </div>
         <div class="inner-card">
-            <img src="pics/oskar-face.jpg">
-            <h3>Tacosås</h3>
-            <h4>Ta mig till detaljer --></h4>
+            <div class="imgHolder">
+            <img src="pics/pexels-engin-akyurt-2899682.jpg">
+            <span>Hämtas om 40min</span>
+            </div>
+            <h3>Tomater</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </button>
+                </div>
         </div>
         <div class="inner-card">
-            <img src="pics/oskar-face.jpg">
-            <h3>Tacosås</h3>
-            <h4>Ta mig till detaljer --></h4>
+            <div class="imgHolder">
+            <img src="pics/pexels-lisa-fotios-1279330.jpg">
+            <span>Körs ut om 40min</span>
+            </div>
+            <h3>Spaghetti</h3>
+            <div class="arrow">
+                <i class="fas fa-car-side"></i>
+                <button class="detBtn">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </button>
+                </div>
         </div>
         <div class="inner-card">
-            <img src="pics/oskar-face.jpg">
+            <div class="imgHolder">
+            <img src="pics/pexels-ella-olsson-1640771.jpg">
+            <span>Hämtas direkt</span>
+            </div>
             <h3>Tacosås</h3>
-            <h4>Ta mig till detaljer --></h4>
+            <div class="arrow">
+            <i class="fas fa-home"></i>
+            <button class="detBtn">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </button>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
 </body>
 
 </html>
+
+
+<!-- <i class="fas fa-long-arrow-alt-right"></i> -->
+            <!-- <span class="material-icons">
+                arrow_right_alt
+                </span> -->

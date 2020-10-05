@@ -1,17 +1,32 @@
+:root {
+    --main-primary-color: #ff7f4d;
+    --main-primarylight-color: #ffb07b;
+    --main-primarydark-color: #c64f21;
+    --main-secondary-color: #66bb6a;
+    --main-secondarylight-color: #98ee99;
+    --main-secondarydark-color: #338a3e;
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Open Sans';
+}
+
 header {
     display: flex;
     flex-direction: row;
+    padding: 10px;
 }
 
-header h1 {
+header img {
     margin: 0 auto;
 }
+
 
 .details {
     display: flex;
@@ -89,7 +104,8 @@ header h1 {
     border-top: 1px solid black;
     height: 10em;
     display: flex;
-    align-items: center
+    align-items: center;
+    background: var(--main-primary-color);
  }
 
  .user img {
@@ -122,6 +138,8 @@ header h1 {
     height: 70px;
     width: 250px;
     font-size: 36px;
+    background: var(--main-secondary-color);
+    border: none;
 }
 
 @media only screen and (max-width: 768px) {
