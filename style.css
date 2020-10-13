@@ -35,7 +35,10 @@ header img {
     line-height: 1.4;
     color: #333;
 }
-
+a {
+  text-decoration: none;
+  color: black;
+}
 .input {
     /* margin: auto; */
     padding: 10px;
@@ -84,9 +87,12 @@ input {
   font-size: 32px;
 }
 
+a {
+  text-decoration: none;
+}
 
 
-.publish {
+#publish {
   padding: 10px;
   height: 70px;
   width: 250px;

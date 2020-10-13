@@ -5,13 +5,46 @@ var addBtn = document.getElementById('addBtn')
 var cards = document.getElementById('cards')
 var showcase = document.getElementById('showcase')
 var searchNav = document.getElementById('searchnav')
+var pubBtn = document.getElementById('publish')
+var form = document.getElementsByClassName('form')
 
-btn.addEventListener('submit', clickBtn)
-addBtn.addEventListener('click', showMenu)
+var check = sessionStorage.getItem('back')
+
+if(check == 'true') {
+    clickBtn()
+}
+
+var arrowBtn  = document.getElementById('arrowbtn')
+console.log('dasdas', arrowBtn)
+if(pubBtn) {
+pubBtn.disabled = true
+pubBtn.addEventListener('click', clickBtn)
+}
+if(arrowBtn) {
+arrowBtn.addEventListener('click', blick)
+}
+if(btn) {
+    btn.addEventListener('submit', clickBtn)
+}
+if(addBtn)  {
+    addBtn.addEventListener('click', showMenu)
+}
+
+if(form.length > 0) {
+form[4].addEventListener('input', valid)
+}
+
+function blick() {
+    console.log('dasofmaofoam')
+    sessionStorage.setItem('back', 'true');
+    window.location.href = "http://stackoverflow.com";
+}
 
 
 function clickBtn(e) {
+    if(e) {
     e.preventDefault(e)
+    }
     console.log(cards)   
     cards.style.display = 'flex'
     showcase.style.height= '45vh'
@@ -19,8 +52,10 @@ function clickBtn(e) {
     searchNav.style.display = "flex"
 }
 
-function click() {
-    
+function valid() {
+    if(form[4].value.length > 0) {
+        pubBtn.disabled = false
+        }
 }
 
 function showMenu() {
