@@ -233,13 +233,13 @@ h4 {
   }
 
   .detBtn {
-    width: 134px;
-    height: 34px;
+    width: 142px;
+    height: 47px;
     border: none;
     background: var(--main-secondary-color);
     color: black;
     margin: 10px;
-    font-size: 19px;
+    font-size: 20px;
   }
 
   .imgHolder {
@@ -252,9 +252,9 @@ h4 {
     font-family: 'Open Sans';
     font-weight: 300;
     background-color: var(--main-primary-color);
-    height: 23px;
-    width: 174px;
-    font-size: 19px;
+    height: 28px;
+    width: 182px;
+    font-size: 23px;
 }
 
 i.fas.fa-home, i.fas.fa-car-side {
