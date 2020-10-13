@@ -34,12 +34,19 @@ if(form.length > 0) {
 form[4].addEventListener('input', valid)
 }
 
+if(logo) {
+  logo.addEventListener('click', home)
+}
+
 function blick() {
     console.log('dasofmaofoam')
     sessionStorage.setItem('back', 'true');
-    window.location.href = "http://stackoverflow.com";
+    window.location.href = "index.html";
 }
 
+function home() {
+  window.location.href = "index.html";
+}
 
 function clickBtn(e) {
     if(e) {
