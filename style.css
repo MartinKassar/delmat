@@ -169,6 +169,7 @@ form {
   /* text-align: center; */
 }
 
+/*
 .showcase-inner a {
   display: flex;
   align-items: center;
@@ -177,6 +178,19 @@ form {
   text-decoration: underline;
   text-decoration-color: var(--main-primarydark-color)
 }
+*/
+ #create {
+   background: var(--main-primarylight-color);
+   margin-left: 10px;
+   height: 40px;
+   border: none;
+   margin-top: 21px;
+ }
+ 
+ #create a {
+   font-size: 32px;
+   padding: 3px;
+ }
 
 h4 {
   font-size: 25px;
