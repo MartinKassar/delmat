@@ -49,17 +49,20 @@
                 <input class="input" type="text" required placeholder="Skriv in din adress, stad eller postnummer...">
                 <input type="submit" value="Sök">
             </form>
+            <br />
+            <br />
             <button id="create"><a id="addBtn">Skapa annons +</a></button>
         </div>
         <div id="searchnav">
-            <h3>Alla</h3>
-            <h3>Mat</h3>
+            <h3 id="alla">Alla</h3>
+            <h3 id="mat" onclick="changeMat()">Mat</h3>
             <h3>Ingredienser</h3>
-            <select style="font-size: 25px; height: 31px; margin-top: 16px;" name="cars" id="cars">
+            <select id="selection" onchange="filter()"style="font-size: 25px; height: 31px; margin-top: 16px;" name="cars" id="cars">
                 <option selected disabled>Filtrera på kost</option>
-                <option value="volvo">Vegan</option>
-                <option value="saab">Vegetarisk</option>
-                <option value="saab">Icke-veg</option>
+                <option value="allt">Allt</option>
+                <option value="vegan">Vegan</option>
+                <option value="vegetarisk">Vegetarisk</option>
+                <option value="icke">Icke-veg</option>
             </select>
             
         </div>
@@ -76,14 +79,15 @@
         <br>
         <h4>Ingredienser</h4> 
         <span class="list" style="margin-left: 77px;">
-        <input placeholder="Lägg till ingredienser..." class="form" type="text"> <button style="font-size: 21px; margin-left: 5px; margin-right: 16px;">Lägg till</button>
+        <input id="addtext" placeholder="Lägg till ingredienser..." class="form" type="text"> 
+        <button onclick="addProduct()" id="addProd" style="font-size: 21px; margin-left: 5px; margin-right: 16px;">Lägg till</button>
         </span>
-        <ul class="listitems">
+        <ul id="listitems">
             <li><span class="material-icons">
                 remove
                 </span>  Lök</li>
             <li><span class="material-icons">
-                remove
+                remove_circle_outline
                 </span>  Morötter</li>
             <li><span class="material-icons">
                 remove
@@ -110,6 +114,9 @@
             <option value="saab">Båda</option>
         </select>
         <br>
+        <br>
+        <h4>Tid?</h4> <input placeholder="Skriv in hur lång tid det tar..." class="form" type="text">
+        <br>
         <h4>Adress</h4> <input placeholder="Skriv in din adress..." class="form" type="text">
         <br>
         <h4>Övrigt</h4> <textarea class="form" type="text" rows="4" cols="50">
@@ -124,17 +131,36 @@
         <!-- <a href="https://icons8.com/icon/368/upload">Upload icon by Icons8</a> -->
         <br>
         <button id="publish">Publicera</button>
+        <!-- <br> -->
+        <div id="backconf">
+            <span onclick="clickBtn()" id="backarrow" class="material-icons">
+                arrow_back
+            </span>
+        <p id="delat">Din mat är delad!</p>
+        </div>
     </fieldset>
     </div>
     </div>
     <div id="cards">
         <div class="inner-card">
             <div class="imgHolder">
+            <img src="pics/pexels-rajesh-tp-1624487 (1).jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Kyckling</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
             <img src="pics/pexels-daria-shevtsova-704569.jpg">
             
                 <span>Hämtas om 40min</span>
             </div>
-            <h3>Avokadoröra</h3>
+            <h3>Avokadomacka</h3>
             <div class="arrow">
                 <i class="fas fa-home"></i>
                 <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
@@ -178,15 +204,169 @@
         </div>
         <div class="inner-card">
             <div class="imgHolder">
-            <img src="pics/pexels-ella-olsson-1640771.jpg">
+            <img src="pics/pexels-burst-373882.jpg">
             <span>Hämtas direkt</span>
             </div>
-            <h3>Tacosås</h3>
+            <h3>Mjölk</h3>
             <div class="arrow">
             <i class="fas fa-home"></i>
             <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
             </div>
         </div>
+                
+    </div>
+    <div id="resultTwo">
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-rajesh-tp-1624487 (1).jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Kyckling</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-daria-shevtsova-704569.jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Avokadomacka</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-ella-olsson-1640777.jpg">
+            <span>Hämtas/körs direkt</span>
+            </div>
+            <h3>Pastasallad</h3>
+            <div class="arrow">
+                <span>
+                <i class="fas fa-car-side"></i>
+                <i class="fas fa-home"></i>
+                </span>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-lisa-fotios-1279330.jpg">
+            <span>Körs ut om 40min</span>
+            </div>
+            <h3>Spaghetti</h3>
+            <div class="arrow">
+                <i class="fas fa-car-side"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+    </div>
+
+
+
+    <div id="resultThree">
+        
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-ella-olsson-1640777.jpg">
+            <span>Hämtas/körs direkt</span>
+            </div>
+            <h3>Pastasallad</h3>
+            <div class="arrow">
+                <span>
+                <i class="fas fa-car-side"></i>
+                <i class="fas fa-home"></i>
+                </span>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-lisa-fotios-1279330.jpg">
+            <span>Körs ut om 40min</span>
+            </div>
+            <h3>Spaghetti</h3>
+            <div class="arrow">
+                <i class="fas fa-car-side"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+    </div>
+
+
+    <div id="resultFour">
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-daria-shevtsova-704569.jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Avokadomacka</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-ella-olsson-1640777.jpg">
+            <span>Hämtas/körs direkt</span>
+            </div>
+            <h3>Pastasallad</h3>
+            <div class="arrow">
+                <span>
+                <i class="fas fa-car-side"></i>
+                <i class="fas fa-home"></i>
+                </span>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-lisa-fotios-1279330.jpg">
+            <span>Körs ut om 40min</span>
+            </div>
+            <h3>Spaghetti</h3>
+            <div class="arrow">
+                <i class="fas fa-car-side"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+    </div>
+
+
+
+    <div id="resultFive">
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-daria-shevtsova-704569.jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Avokadomacka</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        <div class="inner-card">
+            <div class="imgHolder">
+            <img src="pics/pexels-rajesh-tp-1624487 (1).jpg">
+            
+                <span>Hämtas om 40min</span>
+            </div>
+            <h3>Kyckling</h3>
+            <div class="arrow">
+                <i class="fas fa-home"></i>
+                <button class="detBtn"><a href="detail.html">Ta mig vidare  <i class="fas fa-long-arrow-alt-right"></i> </a></button>
+                </div>
+        </div>
+        
     </div>
     <script src="main.js"></script>
 </body>

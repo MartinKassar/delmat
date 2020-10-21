@@ -32,7 +32,7 @@
 
 <body>
     <header>
-        <span id="backarrow" class="material-icons" style="font-size: 32px;">
+        <span id="backarrow" class="material-icons" style="font-size: 32px; color: black!important;">
             account_circle
         </span>
         <!-- <h1 class="logo">Delmat</h1> -->
@@ -83,7 +83,11 @@
                 </p>
             </div>
             <div class="contact">
-                <button class="btn">Kontakta värd</button>
+                <button id="hideBtn" onclick="feedbackTwo()" class="btn">Boka maten</button>
+                <button id="hideBtn2" onclick="feedbackTwo()" class="btn">Ångra</button>
+                <br>
+                <p id="bokatOne">Bokat! Oscar kontakter dig snart på telefon</p>
+                <p id="bokatTwo">Din bokning är ångrad</p>
             </div>
             <div class="user">
                 <img src="pics/oskar-face.jpg" alt="oskar">

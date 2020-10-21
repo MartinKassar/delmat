@@ -166,6 +166,7 @@ form {
   justify-content: center;
   width: fit-content;
   margin: 20px;
+  flex-wrap: wrap;
   /* text-align: center; */
 }
 
@@ -297,7 +298,7 @@ i.fas.fa-home, i.fas.fa-car-side {
 span.material-icons.arrow {
   font-size: 45px;
 }
-.listitems {
+#listitems {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -308,7 +309,70 @@ span.material-icons.arrow {
     list-style-type: none;
 }
 
-.listitems li {
+#listitems li {
     font-size: 1.6em;
     margin: 15px;
+}
+
+#addProd {
+  background-color: var(--main-secondary-color);
+  border: none;
+  padding: 5px;
+}
+
+textarea {
+ font-size: 20px; 
+ margin: 0px;
+ width: 389px;
+ height: 184px;
+}
+
+#delat {
+  font-size: 20px;
+  padding: 5px;
+  color: var(--main-secondary-color);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#backconf {
+  display: flex;
+  flex-direction: row;
+  
+}
+
+span#backarrow {
+    font-size: 58px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    flex-direction: row;
+}
+
+#resultTwo {
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      display: none;
+}
+
+#resultThree {
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      display: none;
+}
+#resultFour {
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      display: none;
+}
+#resultFive {
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+      display: none;
 }

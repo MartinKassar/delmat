@@ -146,6 +146,26 @@ header img {
     border: none;
 }
 
+#bokatOne {
+    font-size: 20px;
+    padding: 5px;
+    color: var(--main-secondary-color);
+    display: none;
+  }
+  #bokatTwo {
+    font-size: 20px;
+    padding: 5px;
+    color: var(--main-secondary-color);
+    display: none;
+  }
+
+  #hideBtn2 {
+    background: red;
+    color: black;
+    display: none;
+  }
+  
+
 @media only screen and (max-width: 768px) {
     .details {
       display: flex;
